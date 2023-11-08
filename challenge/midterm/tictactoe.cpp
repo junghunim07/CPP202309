@@ -6,7 +6,7 @@ char board[numCell][numCell]{}; // 보드판을 나타내는 2차원 배열
 bool isValid(int x, int y);
 bool checkWin(char currentUser);
 bool checkLeftUpToBottom(char currentUser);
-bool checkRightBottomToUp(char currentUser);
+bool checkRightUPToBottom(char currentUser);
 
 int main() {
 	// 게임을 진행하는 데 필요한 변수 선언
@@ -182,7 +182,7 @@ bool checkWin(char currentUser) {
 		return true;
 	}
 
-	if (checkRightBottomToUp(currentUser)) {
+	if (checkRightUPToBottom(currentUser)) {
 		cout << "오른쪽 위에서 왼쪽 아래 대각선으로 모두 돌이 놓였습니다!" << endl;
 		return true;
 	}
@@ -217,7 +217,7 @@ bool checkLeftUpToBottom(char currentUser) {
 }
 
 // 오른쪽 위에서 왼쪽 아래 대각선
-bool checkRightBottomToUp(char currentUser) {
+bool checkRightUPToBottom(char currentUser) {
 	int cnt = 0;
 
 	for (int i = 0; i < numCell; i++) {
